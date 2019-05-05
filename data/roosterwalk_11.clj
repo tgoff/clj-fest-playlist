@@ -1,7 +1,5 @@
 ;; List of all bands (sanitized to remove anything extraneous, e.g. "Artist at Large")
-{:token ""
- :user-id ""
- :playlist-name "Rooster Walk 11 Super List"
+{:playlist-name "Rooster Walk 11 Super List"
  :artist-names [
                 "GALACTIC"
                 "SAM BUSH"
