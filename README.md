@@ -13,7 +13,7 @@ Download from http://example.com/FIXME.
 
 ## Usage
 
-Set SPOTIFY_TOKEN and SPOTIFY_USER env vars before running.
+Set SPOTIFY_TOKEN and SPOTIFY_USER env vars before running (obtain these at https://developer.spotify.com/console/post-playlists/ by clicking "Get Token").
 Add band list and playlist name to an EDN file (see samples under `data/`).  I found that usually you can select the band list from the festival website and then use some VIM-foo to add quotes and properly format it.  
 
     $ java -jar clj-fest-playlist-0.1.0-standalone.jar config-file-name.clj
