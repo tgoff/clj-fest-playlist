@@ -1,5 +1,6 @@
 (ns clj-fest-playlist.core
   (:require [clj-spotify.core :as sptfy]
+            [clj-spotify.util :as sutils]
             [clojure.edn :as edn]
             [clojure.pprint :as p])
   (:gen-class))
@@ -33,9 +34,10 @@
         config-file (last args)
         config (->> (slurp config-file)
                     (edn/read-string))
-        token (System/getenv "SPOTIFY_TOKEN");(get config :token)
+        ;; token (sutils/get-access-token (System/getenv "CLIENT_ID") (System/getenv "CLIENT_SECRET"))
+        token (System/getenv "SPOTIFY_TOKEN")
         playlist-name (get config :playlist-name)
-        user-id (System/getenv "SPOTIFY_USER");(get config :user-id)
+        user-id (System/getenv "SPOTIFY_USER")
         artist-names (get config :artist-names)
         songs-per-artist (get config :songs-per-artist)
         artist-infos (map #(get-artist-info-by-name token %) artist-names)
@@ -60,7 +62,7 @@
 
 
         (println (str "adding " (count tracks ) " tracks:"))
-        ; (p/pprint track-uri-partitions)
+        (p/pprint track-uri-partitions)
 
         (print "playlist:")
         (p/pprint playlist)
